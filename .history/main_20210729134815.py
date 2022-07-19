@@ -7,8 +7,9 @@ import sys
 
 import pytz
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-import core
-import DiscordBot
+
+from . import core
+from . import DiscordBot
 
 __appname__ = 'Scheduling Discord Bot'
 __version__ = "0.1"

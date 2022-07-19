@@ -19,7 +19,7 @@ def load_config(key, default_value=None, config_file=None):
             logger.info('The value for key {} is {}.'.format(key, value))
         except KeyError:
             value = default_value
-            config.update({key: value})
+            config.update({key: value})o
             f.write(json.dumps(config))
             f.truncate()
             logger.info('The value for key {} is {}.'.format(key, value))
