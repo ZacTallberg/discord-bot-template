@@ -8,11 +8,11 @@ import sys
 import pytz
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import core
-import DiscordBot
+from DiscordBot import DiscordBot
 
-__appname__ = 'Scheduling Discord Bot'
-__version__ = "0.1"
-__author__ = "Vincent 'Doezer' AIRIAU"
+__appname__ = 'Discord Bot Template'
+__version__ = "1.0"
+__author__ = "Zachary Oberg"
 
 
 def get_prompt():
@@ -29,7 +29,7 @@ def get_prompt():
                 f.truncate()
             prompt = config["prompt"]
     except:
-        logging.debug("Prompt not found. Using default '{}'.".format(prompt))
+        logging.debug("No prompt provided, using the default: '{}'.".format(prompt))
 
     logging.info('The prompt is {}.'.format(prompt))
     return prompt
@@ -71,6 +71,9 @@ def main():
                 '^(?:.*?hug.*?)$'.format(prompt): core.hug,
                 '^(?:.*?best part.*?day.*?)$': core.best_part_of_your_day,
                 # "^(?:.*?heehee you're welcome.*?)$": core.birthday,
+                '^(?:.*?hi avi.*?)$': core.avi_hi,
+                '^(?:.*?hi sprout.*?)$': core.hi_sprout,
+                '^(?:.*?about nicole.*?)$': core.hi_nicole
                 }
 
 

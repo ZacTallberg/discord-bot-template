@@ -64,8 +64,10 @@ def transform_emojis_in_str(bot, message_to_post):
         trans_emoji = get_emoji_code(bot, emoji)
         logging.info("transformed emoji is %s", trans_emoji)
         pattern_to_repl = fr'(<:{emoji}\S+>)'
-        message_to_post = re.sub(pattern=pattern_to_repl,
-                                 repl=f'<:{trans_emoji.name}:{trans_emoji.id}>',
-                                 string=message_to_post)
+        message_to_post = re.sub(
+            pattern=pattern_to_repl,
+            repl=f'<:{trans_emoji.name}:{trans_emoji.id}>',
+            string=message_to_post
+            )
         logging.info(message_to_post)
     return message_to_post

@@ -85,6 +85,7 @@ async def hug(bot, channel, author, message, message_obj, server):
     :param discord.Server server:
     """
     name = str(author).split('#')[0]
+    ####################################
     list_of_hugs = [
         'Hi {}, you get a hug :hugging: '.format(name),
         "You're wonderful and I like you :hugging: ",
@@ -92,9 +93,14 @@ async def hug(bot, channel, author, message, message_obj, server):
         "Hi {}, I hope you're having a good day! :hugging:".format(name),
         'I love hugs :hugging:',
         "I appreciate you {}, you're a really kind and loving person :hugging:".format(name),
-        "Aren't hugs the best? My creator may have made me to give hugs, but secretly I do it because I love them :hugging:"
+        "Aren't hugs the best? My creator may have made me to give hugs, but secretly I do it because I love them :hugging:",
+        "Can you ever have enough hugs? :hugging:",
+        "Next time I'm going to ask *you* for a hug! :hugging:",
+        "You're so sweet, of course! :hugging:",
+        "Yes, please! Okay, maybe two... :hugging: :hugging:",
+        "Uh, duh!! Get over here and give me a hug you silly billy :hugging:",
     ]
-    
+    ####################################
     await message_obj.add_reaction('❤')
     await message_obj.add_reaction('🤗')
     random_hug_message = random.choice(list_of_hugs)
@@ -110,7 +116,33 @@ async def birthday(bot, channel, author, message, message_obj, server):
     await asyncio.sleep(10)
     await typeThenSend(birthday_choice, channel)
 
+async def avi_hi(bot, channel, author, message, message_obj, server):
+    hi_avi = "Hi Avi! It's great to meet you, maybe we can hang out more sometime soon? :sunflower:"
 
+    await asyncio.sleep(5)
+    await typeThenSend(hi_avi, channel)
+
+async def hi_sprout(bot, channel, author, message, message_obj, server):
+    responses = [
+        "Hello there! Nice to meet you :kittyflowers:",
+        "How do you do? It's such a nice day out today.",
+        "Hi hey hello, how are you doing today?",
+        "Hey there :frogbow: , what's the best part of your day so far?",
+        "Hi :) -- I hope you're having a good day!"
+    ]
+    random_response = random.choice(responses)
+    await asyncio.sleep(2)
+    await typeThenSend(random_response, channel)
+
+
+
+async def hi_nicole(bot, channel, author, message, message_obj, server):
+    responses = [
+        "Uhhh, nope! Who's that? (**whispering** Oh oh oh wait, wasn't that the nice woman you thought was *cute*?) :face_with_hand_over_mouth: ",
+    ]
+    random_response = random.choice(responses)
+    await asyncio.sleep(2)
+    await typeThenSend(random_response, channel)
 
 async def best_part_of_your_day(bot, channel, author, message, message_obj, server):
     best_part_of_my_day = [
